@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>个人知识管理工具</title>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css">
+		<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.css">
+		<link rel="stylesheet" href="assets/css/index.css">
+	</head>
+	<body>
+		<nav class="navbar navbar-default" style="display:none;">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				    <span class="sr-only">Toggle navigation</span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				    <span class="icon-bar"></span>
+				  </button>
+				  <a class="navbar-brand" href="#">Brand</a>
+				</div>
+			</div><!-- /.container-fluid -->
+		</nav>
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-2 full-height">
+					<div class="sidebar">
+						<div class="title-height sidebar-title">
+							<span>笔记本</span>	
+						</div>
+						
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
+
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="javascript:;">设计</a></li>
+								<li class=""><a href="javascript:;">HTML</a></li>
+								<li class="item-option"><a href="javascript:;" class="add-books"><i class="fa fa-plus-circle"></i></a><a href="javascript:;" class="del-books"><i class="fa fa-trash-o"></i></a></li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div>
+				</div>
+
+				<div class="col-xs-4 full-height note-list-tab">
+					<div class="title-height ">
+						<span>设计</span>
+						<div class="book-option">
+							<button class="btn btn-danger btn-sm del-book-btn pull-right"><i class="fa fa-trash-o"></i>&nbsp;&nbsp;删除笔记本</button>
+							<button class="btn btn-info btn-sm edit-book-btn pull-right"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;编辑笔记本</button>
+						</div>
+					</div>
+					<div class="add-note">
+						<a href="javascript:;" class="add-note-item">
+							<div class="add-item-box">
+								<i class="fa fa-plus-circle"></i>
+							</div>
+						</a>
+					</div>
+					<div class="notes-list">
+						<div class="list-item active">
+							<a href="">
+								<span class="item-title">
+									图片排版与字体排版
+								</span>
+								<p class="item-summary">
+									如果两张图片的放歌、内容、色调相近，颜色的安排符合某种规律，那么观众的眼睛就会非常流畅地路过你的图片走到下一个关注点那里，这叫做对齐，观众的关注点就会停留在...
+								</p>	
+							</a>
+						</div>
+						<div class="list-item">
+							<a href="">
+								<span class="item-title">
+									图片排版与字体排版
+								</span>
+								<p class="item-summary">
+									如果两张图片的放歌、内容、色调相近，颜色的安排符合某种规律，那么观众的眼睛就会非常流畅地路过你的图片走到下一个关注点那里，这叫做对齐，观众的关注点就会停留在...
+								</p>
+							</a>
+						</div>
+
+					</div>
+					
+				</div>
+
+				<div class="col-xs-4 full-height" style="display:none;">
+					<div class="demo-control"><a href="#" class="source-submit">submit</a></div>
+						<textarea class="source full-height">
+
+						</textarea>
+				</div>
+				<div class="col-xs-6 full-height">
+					<div class="note-detail-tab full-height">
+						<div class="title-height ">
+							<div class="note-title">
+								<span >图片排版与字体排版</span>
+							</div>
+							<div class="note-option">
+								<a href="javascript:;" class="del-note-link note-option-link"><i class="fa fa-trash-o"></i></a>
+								<a href="javascript:;" class="edit-note-link note-option-link"><i class="fa fa-pencil-square-o"></i></a>
+								<!-- <button class="btn btn-danger btn-sm del-book-btn pull-right"><i class="fa fa-trash-o"></i>&nbsp;&nbsp;删除笔记</button>
+								<button class="btn btn-info btn-sm edit-book-btn pull-right"><i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;编辑笔记</button> -->
+							</div>
+						</div>
+						<div class="result-html"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/jquery/1.11.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script src="assets/vendor/remarkable/remarkable.js"></script>
+
+	<script src="assets/js/index.js"></script>
+</html>

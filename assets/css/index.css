@@ -1,0 +1,329 @@
+html,
+body,
+.full-height {
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+  /*padding-bottom: 180px;*/
+  background-color: #EEEEEE;
+  height: 700px;
+}
+a{
+  text-decoration:none;
+  /*color: #fff;*/
+}
+.demo-options {
+  margin-bottom: 10px;
+}
+.opt__strict .not-strict {
+  opacity: 0.3;
+}
+.checkbox {
+  margin-right: 10px;
+}
+.source {
+  width: 100%;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  padding: 2px;
+}
+/*.result-html {
+  padding: 2px 10px;
+  overflow: auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}*/
+.result-html img {
+  max-width: 35%;
+}
+.result-src,
+.result-debug {
+  display: none;
+  background-color: #fff;
+}
+.result-src-content,
+.result-debug-content {
+  white-space: pre;
+}
+.result-as-html .result-html {
+  display: block;
+}
+.result-as-html .result-src,
+.result-as-html .result-debug {
+  display: none;
+}
+.result-as-src .result-src {
+  display: block;
+}
+.result-as-src .result-html,
+.result-as-src .result-debug {
+  display: none;
+}
+.result-as-debug .result-debug {
+  display: block;
+}
+.result-as-debug .result-html,
+.result-as-debug .result-src {
+  display: none;
+}
+.demo-control {
+  position: absolute;
+  right: 40px;
+  top: 0;
+  border-radius: 0 0 6px 6px;
+  font-size: 12px;
+  background-color: #666;
+  color: #fff !important;
+  opacity: 0.6;
+  -webkit-transition: opacity 0.5s ease-in-out;
+          transition: opacity 0.5s ease-in-out;
+}
+.demo-control:hover {
+  opacity: 1;
+}
+.demo-control a {
+  padding: 0 20px;
+  color: #fff !important;
+}
+.demo-control a:first-child {
+  padding-left: 30px;
+}
+.demo-control a:last-child {
+  padding-right: 30px;
+}
+.hljs {
+  background: none;
+  padding: 0;
+}
+.footnotes {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+}
+.footnotes-list {
+  padding-left: 2em;
+}
+.gh-ribbon {
+  display: block;
+  position: absolute;
+  right: -60px;
+  top: 44px;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 230px;
+  z-index: 10000;
+  white-space: nowrap;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #686868;
+  box-shadow: 0 0 2px rgba(102,102,102,0.4);
+  padding: 1px 0;
+}
+.gh-ribbon a {
+  text-decoration: none !important;
+  border: 1px solid #ccc;
+  color: #fff;
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  outline: medium none;
+  padding: 4px 50px 2px;
+  text-align: center;
+}
+.form-inline .radio,
+.form-inline .checkbox {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.form-inline .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+.form-inline .form-control {
+  display: inline-block;
+  vertical-align: middle;
+  width: auto;
+}
+
+.bg-black {
+  background-color: #000;
+  color: #fff;
+}
+.container {
+  height: 100%;
+}
+.container .row{
+  height: 100%;
+}
+.title-height{
+  /*height: 120px;*/
+  padding-top: 60px;
+  font-size: 32px;
+  padding-bottom: 60px;
+}
+/*
+sidebar
+*/
+.sidebar{
+  background-color: #191818;
+  color: #fff;
+  height: 100%;
+}
+#bs-example-navbar-collapse-1{
+  /*height: 100% !important;*/
+  padding-top: 0px;
+}
+.sidebar .sidebar-title{
+  text-align: center;
+  
+}
+.sidebar span{
+  color: #8E8C8C;
+  font-size: 32px;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+.sidebar .collapse.navbar-collapse{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+.sidebar ul{
+  width: 100%;
+}
+.sidebar ul li{
+  width: 100%;
+}
+.sidebar ul li a{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-decoration:none;
+  color: #fff;
+}
+.sidebar ul li.item-option{
+  text-align: center;
+}
+.sidebar ul li.item-option a{
+  font-size: 22px;
+  text-align: center;
+  display: inline-block;
+}
+.sidebar ul li a:hover, .sidebar ul li a:focus{
+  background-color: #313030;
+}
+.sidebar ul li.active{
+  background-color: #313030;
+
+}
+
+/*
+note list 
+*/
+.note-list-tab{
+  background-color: #fff;
+  padding: 0px 10px;
+}
+/*title*/
+.note-list-tab .title-height{
+  color: #C6C6C6;
+}
+.note-list-tab .title-height .add-note-btn{
+  padding: 6px 20px;
+}
+.note-list-tab .title-height .book-option button{
+  margin-left: 10px;
+}
+/*add note box*/
+.note-list-tab .add-note{
+  background-color: #F6F6F6;
+  padding: 10px;
+  margin: 10px 0px;
+}
+.note-list-tab .add-note .add-item-box{
+  border: 1px dashed #8E8C8C; 
+  text-align: center;
+  height: 80px;
+  vertical-align: middle;
+  font-size: 40px;
+  padding-top: 8px;
+}
+.note-list-tab .add-note {
+  margin-top: 0px;
+}
+.note-list-tab .add-note a{
+  color: #6C6C6B;
+  text-decoration:none;
+}
+/*list item css*/
+.notes-list .list-item{
+  background-color: #F6F6F6;
+  padding: 8px;
+  margin: 10px 0px;
+  color:#686879;
+  border: 1px solid #F6F6F6;
+}
+.notes-list .list-item .item-title{
+  font-weight: bold;
+}
+.notes-list .list-item p{
+  margin: 0px;
+}
+.notes-list .list-item a{
+  color: #6C6C6B;
+  text-decoration:none;
+}
+.notes-list .list-item.active ,.notes-list .list-item.active:hover{
+  border: 1px solid #B4DCF0;
+  background-color: #FBFBFB;
+  padding: 8px;
+}
+.notes-list .list-item:hover{
+  padding: 8px;
+  border: 1px solid #F6F6F6;
+  background-color: #FBFBFB;
+}
+/*note detail tab*/
+.note-detail-tab{
+  background-color: #fff;
+  /*padding: 0px 10px;*/
+}
+.note-detail-tab .title-height{
+  background-color: #D8381F;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #fff;
+  padding: 0px 10px;
+}
+.note-detail-tab .result-html{
+  padding: 0px 10px;
+}
+.note-detail-tab .title-height .note-title{
+  display: inline-block;
+  width: 80%;
+  padding: 60px 0px;
+}
+.note-option{
+  display: inline-block;
+  width: 18%;
+  text-align: center;
+  vertical-align: middle;
+}
+.note-option a{
+    font-size: 20px;
+    color: #A9A9A9;
+    margin-left: 10px;
+    width: 100%;
+    height: 70px;
+    margin: 0px;
+    padding-top: 20px;
+}
+.note-option a:hover{
+  color: #fff;
+}
+.note-option-link{
+  display: block;
+}
