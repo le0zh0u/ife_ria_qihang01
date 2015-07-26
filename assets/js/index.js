@@ -12,6 +12,102 @@ $(function() {
   console.log(md.render('# Remarkable rulezz!'));
   // => <h1>Remarkable rulezz!</h1>
   $(".source").val("---\r__Advertisement :)__\r- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image\rresize in browser.\r- __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly\ri18n with plurals support and easy syntax.\rYou will like those projects!\r---\r# aaa\r## bbb\r### ccc\r#### ddd\r##### eee");
+
+  var loadbooksAndNotesByNotesId = function(noteId){
+    $.ajax({
+      type:"GET",
+      url:"data/notes.json",
+      dataType:"json",
+      success:function(result){
+        console.log(result);
+        var data = result.data;
+        var booksUL = "";
+        var notesUL = "";
+        $.each(data, function(i, n){
+            var book_id = n.bookId;
+            var book_name = n.bookName;
+            booksUL += "<li ";
+            var notes = n.notes;
+            var noteinbookId = "";
+            //获取note所在的book
+            $.each(notes,function(i, note){
+              var note_id = note.noteId;
+              
+              if(note_id == noteId){
+                noteinbookId = book_id;
+              }
+            });
+            $.each(notes,function(i, note){
+              var note_id = note.noteId;
+
+              if(noteinbookId == book_id){
+                var note_title = note.noteTitle;
+                var note_content = note.noteContent;
+                //加载note所在的books选中状态
+                booksUL += "class='active' ";
+                //加载notelist页面
+                //设置notelist页面的title
+                $(".book-name").text(book_name);
+                //设置delbooks和editbooks按钮的id
+                $(".del-book-btn").data("id",book_id);
+                $(".edit-book-btn").data("id",book_id);
+                //设置添加note的bookid
+                $(".add-note-item").data("id",note_id);
+                notesUL += '<div class="list-item';
+              }
+              
+              if(note_id == noteId){
+                //设置选中状体啊的note
+                notesUL+= ' active ';
+                $(".markdown-box textarea").val(note_content);
+                //加载页面详情页
+                $("div.note-title >span").text(note_title);
+                $(".del-note-link").data("id",note_id);
+                $(".edit-note-link").data("id",note_id);
+              }
+              if(noteinbookId == book_id){
+                notesUL += '"><a href="#" class="note-id" ><span class="item-title">'+note_title+'</span><p class="item-summary"></p></a></div>';
+              }
+
+            });
+
+            booksUL += "><a class='book-item' href='#' data-id='"+book_id+"'>"+book_name+"</a></li>";
+
+
+
+        });
+        booksUL += '<li class="item-option"><a href="#" class="add-books"><i class="fa fa-plus-circle"></i></a><a href="#" class="del-books"><i class="fa fa-trash-o"></i></a></li>';
+        $(".nav.navbar-nav").append(booksUL);
+        $(".notes-list").html(notesUL);
+        updateViewTextarea();
+      },
+      error:function(XMLHttpRequest, textStatus, errorThrown){
+        alert("error"+"XMLHttpRequest:"+XMLHttpRequest+";textStatus:"+textStatus+";errorThrown:"+errorThrown);
+      }
+    });
+  };
+  loadbooksAndNotesByNotesId(4);
+
+  var loadBookId=function(bookId){
+    //设置笔记本active
+    var books = $('.nav.navbar-nav');
+    $('.nav.navbar-nav .active').removeClass("active");
+    $.each(books,function(i,book){
+      if(this.attr("data-id")==bookId){
+        this.addClass("active");
+      }
+    });
+    
+
+  };
+
+
+  //点击books 选择笔记本
+  $("#bs-example-navbar-collapse-1 .nav.navbar-nav li a.book-item").click(function(){
+    var book_id = $(this).attr("data-id");
+    loadBookId(bookId);
+  });
+
   /*
 
 # h1 Heading
@@ -224,7 +320,7 @@ It converts &quot;HTML&quot;, but keep intact partial entries like &quot;xxxHTML
 *[HTML]: Hyper Text Markup Language
 
   */
-  updateViewTextarea();
+  //updateViewTextarea();
 
   $('.source-submit').click(function(){
     updateViewTextarea();
